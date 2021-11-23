@@ -89,7 +89,7 @@ namespace doktorBisiklet
             // 
             // bakimBtn
             // 
-            this.bakimBtn.Location = new System.Drawing.Point(111, 284);
+            this.bakimBtn.Location = new System.Drawing.Point(108, 284);
             this.bakimBtn.Name = "bakimBtn";
             this.bakimBtn.Size = new System.Drawing.Size(160, 47);
             this.bakimBtn.TabIndex = 5;
@@ -109,11 +109,11 @@ namespace doktorBisiklet
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(252, 363);
+            this.label1.Location = new System.Drawing.Point(275, 363);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 13);
+            this.label1.Size = new System.Drawing.Size(113, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Günlük Bilgilendirmeleri İlet";
+            this.label1.Text = "Günlük Bilgilendirmeler";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // drBisikletHome

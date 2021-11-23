@@ -12,14 +12,14 @@ namespace doktorBisiklet
         public void mailGonder(string email, string icerik, string konu)
         {
             MailMessage ePosta = new MailMessage();
-            ePosta.From = new MailAddress("armaganozan@gmail.com","Dr. Bisiklet");
+            ePosta.From = new MailAddress("info.drbisiklet@gmail.com","Dr. Bisiklet");
             ePosta.To.Add(email);
             ePosta.Subject = icerik ;
             ePosta.IsBodyHtml = true;
             ePosta.Body = konu;
 
             SmtpClient smtp = new SmtpClient();
-            smtp.Credentials = new System.Net.NetworkCredential("armaganozan@gmail.com", "32731219222Ar");
+            smtp.Credentials = new System.Net.NetworkCredential("info.drbisiklet@gmail.com", "Drbisikletapp");
             smtp.Port = 587;
             smtp.Host = "smtp.gmail.com";
             smtp.EnableSsl = true;

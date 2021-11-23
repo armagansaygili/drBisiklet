@@ -23,7 +23,7 @@ namespace doktorBisiklet
 
         public void Datagetir()
         {
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT bakim_id,mus_ad,mus_sad,urun_marka,urun_model,islemler,ucret,mus_tel,talma_tarih,urun_durum FROM musteri INNER JOIN bakim_listesi ON musteri.mus_id = bakim_listesi.mus_id where urun_durum=0", sqlconnection.baglan());
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT bakim_id,mus_ad,mus_sad,urun_marka,urun_model,islemler,ucret,mus_tel,talma_tarih,urun_durum,mus_email FROM musteri INNER JOIN bakim_listesi ON musteri.mus_id = bakim_listesi.mus_id where urun_durum=0", sqlconnection.baglan());
             DataTable ds = new DataTable();
 
             da.Fill(ds);
@@ -43,6 +43,8 @@ namespace doktorBisiklet
             bakimListesiDg.Columns[7].HeaderText = "Telefon";
             bakimListesiDg.Columns[8].HeaderText = "Teslim alma tarihi";
             bakimListesiDg.Columns[9].Visible = false;
+            bakimListesiDg.Columns[10].Visible = false;
+
 
 
 
@@ -64,22 +66,32 @@ namespace doktorBisiklet
 
         private void bakimBitirTbx_Click(object sender, EventArgs e)
         {
-            int r_id = Convert.ToInt32(bakimListesiDg.CurrentRow.Cells["bakim_id"].Value);
-            MySqlCommand mySqlCommand = new MySqlCommand("Update bakim_listesi set urun_durum=1 where bakim_id=" + r_id, sqlconnection.baglan());
-            MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
-            Datagetir();
 
-            sendMail sendMail = new sendMail();
-            sendMail.mailGonder("armagan.saygili@decathlon.com", "Bisikletiniz Hazır!","Bisikletiniz hazırdır.");
+            if (bakimListesiDg.CurrentRow != null)
+            {
+                int r_id = Convert.ToInt32(bakimListesiDg.CurrentRow.Cells["bakim_id"].Value);
+                string email = bakimListesiDg.CurrentRow.Cells["mus_email"].Value.ToString();
+                MySqlCommand mySqlCommand = new MySqlCommand("Update bakim_listesi set urun_durum=1 where bakim_id=" + r_id, sqlconnection.baglan());
+                MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+                Datagetir();
+
+                sendMail sendMail = new sendMail();
+                sendMail.mailGonder(email, "Bisikletiniz Hazır!", "Bisikletiniz hazırlandı.");
+            }
+
+            
 
         }
 
         private void bakimIptalTbx_Click(object sender, EventArgs e)
         {
-            int r_id = Convert.ToInt32(bakimListesiDg.CurrentRow.Cells["bakim_id"].Value);
+            if(bakimListesiDg.CurrentRow != null) { 
+                        int r_id = Convert.ToInt32(bakimListesiDg.CurrentRow.Cells["bakim_id"].Value);
             MySqlCommand mySqlCommand = new MySqlCommand("Delete from bakim_listesi where bakim_id=" + r_id, sqlconnection.baglan());
             MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
             Datagetir();
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
