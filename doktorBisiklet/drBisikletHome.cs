@@ -83,7 +83,7 @@ namespace doktorBisiklet
             bayramMail.bayramMailGonder();
             Console.WriteLine("Basıldı.");
             label1.Enabled = false;
-            label1.Visible = false;
+
 
         }
     }

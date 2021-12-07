@@ -6,7 +6,7 @@ namespace Mysql
     {
         public MySqlConnection baglan()
         {
-            string conString = "server=localhost;user=root;database=doktorbisiklet;password=32731219222Ar";
+            string conString = "server=localhost;user=root;database=doktorbisiklet;password=32731219222Ar;IntegratedSecurity=no";
             MySqlConnection conn = new MySqlConnection(conString);
             conn.Open();
             MySqlConnection.ClearPool(conn);

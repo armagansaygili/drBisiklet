@@ -19,7 +19,6 @@ C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\bin\Debug\System.Buff
 C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\bin\Debug\System.Memory.xml
 C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\obj\Debug\doktorBisiklet.csproj.AssemblyReference.cache
 C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\obj\Debug\doktorBisiklet.exe.config
 C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\obj\Debug\doktorBisiklet.bakim.resources
 C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\obj\Debug\doktorBisiklet.bakimListesi.resources
@@ -32,3 +31,6 @@ C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\obj\Debug\doktorBisik
 C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\obj\Debug\doktorBisiklet.csproj.CoreCompileInputs.cache
 C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\obj\Debug\doktorBisiklet.exe
 C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\obj\Debug\doktorBisiklet.pdb
+C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\bin\Debug\RestSharp.dll
+C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\bin\Debug\RestSharp.xml
+C:\Users\armsa\Desktop\Taner\doktorBisiklet\doktorBisiklet\obj\Debug\doktorBisiklet.csproj.AssemblyReference.cache

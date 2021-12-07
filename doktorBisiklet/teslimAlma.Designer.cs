@@ -38,8 +38,6 @@ namespace doktorBisiklet
             this.musSadTbx = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.markaTbx = new System.Windows.Forms.TextBox();
-            this.modelTbx = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ucretTbx = new System.Windows.Forms.TextBox();
@@ -49,6 +47,8 @@ namespace doktorBisiklet
             this.label8 = new System.Windows.Forms.Label();
             this.avansTbx = new System.Windows.Forms.TextBox();
             this.islemListbox = new System.Windows.Forms.CheckedListBox();
+            this.markaTbx = new System.Windows.Forms.TextBox();
+            this.modelTbx = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.musteriListesiDg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,22 +132,6 @@ namespace doktorBisiklet
             this.label2.TabIndex = 30;
             this.label2.Text = "Marka:";
             // 
-            // markaTbx
-            // 
-            this.markaTbx.Location = new System.Drawing.Point(335, 25);
-            this.markaTbx.MaxLength = 24;
-            this.markaTbx.Name = "markaTbx";
-            this.markaTbx.Size = new System.Drawing.Size(122, 20);
-            this.markaTbx.TabIndex = 3;
-            // 
-            // modelTbx
-            // 
-            this.modelTbx.Location = new System.Drawing.Point(335, 76);
-            this.modelTbx.MaxLength = 24;
-            this.modelTbx.Name = "modelTbx";
-            this.modelTbx.Size = new System.Drawing.Size(122, 20);
-            this.modelTbx.TabIndex = 4;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -225,11 +209,29 @@ namespace doktorBisiklet
             this.islemListbox.Size = new System.Drawing.Size(155, 124);
             this.islemListbox.TabIndex = 40;
             // 
+            // markaTbx
+            // 
+            this.markaTbx.Location = new System.Drawing.Point(335, 25);
+            this.markaTbx.MaxLength = 10;
+            this.markaTbx.Name = "markaTbx";
+            this.markaTbx.Size = new System.Drawing.Size(122, 20);
+            this.markaTbx.TabIndex = 41;
+            // 
+            // modelTbx
+            // 
+            this.modelTbx.Location = new System.Drawing.Point(335, 76);
+            this.modelTbx.MaxLength = 10;
+            this.modelTbx.Name = "modelTbx";
+            this.modelTbx.Size = new System.Drawing.Size(122, 20);
+            this.modelTbx.TabIndex = 42;
+            // 
             // teslimAlma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 212);
+            this.Controls.Add(this.modelTbx);
+            this.Controls.Add(this.markaTbx);
             this.Controls.Add(this.islemListbox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.avansTbx);
@@ -239,8 +241,6 @@ namespace doktorBisiklet
             this.Controls.Add(this.ucretTbx);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.markaTbx);
-            this.Controls.Add(this.modelTbx);
             this.Controls.Add(this.musAraBtn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -269,8 +269,6 @@ namespace doktorBisiklet
         private System.Windows.Forms.TextBox musSadTbx;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox markaTbx;
-        private System.Windows.Forms.TextBox modelTbx;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox ucretTbx;
@@ -280,5 +278,7 @@ namespace doktorBisiklet
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox avansTbx;
         private System.Windows.Forms.CheckedListBox islemListbox;
+        private System.Windows.Forms.TextBox markaTbx;
+        private System.Windows.Forms.TextBox modelTbx;
     }
 }

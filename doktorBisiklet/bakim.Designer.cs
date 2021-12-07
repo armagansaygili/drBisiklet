@@ -45,7 +45,7 @@ namespace doktorBisiklet
             // 
             // ekleBtn
             // 
-            this.ekleBtn.Location = new System.Drawing.Point(306, 151);
+            this.ekleBtn.Location = new System.Drawing.Point(306, 293);
             this.ekleBtn.Name = "ekleBtn";
             this.ekleBtn.Size = new System.Drawing.Size(62, 23);
             this.ekleBtn.TabIndex = 9;
@@ -66,12 +66,12 @@ namespace doktorBisiklet
             this.panel2.Controls.Add(this.guncelleUcretTbx);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(518, 189);
+            this.panel2.Size = new System.Drawing.Size(518, 334);
             this.panel2.TabIndex = 13;
             // 
             // silBtn
             // 
-            this.silBtn.Location = new System.Drawing.Point(374, 151);
+            this.silBtn.Location = new System.Drawing.Point(374, 293);
             this.silBtn.Name = "silBtn";
             this.silBtn.Size = new System.Drawing.Size(62, 23);
             this.silBtn.TabIndex = 5;
@@ -96,14 +96,14 @@ namespace doktorBisiklet
             this.bakimDg.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.bakimDg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bakimDg.ShowEditingIcon = false;
-            this.bakimDg.Size = new System.Drawing.Size(493, 105);
+            this.bakimDg.Size = new System.Drawing.Size(493, 225);
             this.bakimDg.TabIndex = 16;
             this.bakimDg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bakimDg_CellClick);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(175, 135);
+            this.label5.Location = new System.Drawing.Point(175, 277);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 15;
@@ -112,7 +112,7 @@ namespace doktorBisiklet
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 135);
+            this.label6.Location = new System.Drawing.Point(8, 277);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 14;
@@ -120,7 +120,7 @@ namespace doktorBisiklet
             // 
             // guncelleBtn
             // 
-            this.guncelleBtn.Location = new System.Drawing.Point(442, 151);
+            this.guncelleBtn.Location = new System.Drawing.Point(442, 293);
             this.guncelleBtn.Name = "guncelleBtn";
             this.guncelleBtn.Size = new System.Drawing.Size(62, 23);
             this.guncelleBtn.TabIndex = 6;
@@ -130,14 +130,14 @@ namespace doktorBisiklet
             // 
             // guncelleIslemTbx
             // 
-            this.guncelleIslemTbx.Location = new System.Drawing.Point(11, 151);
+            this.guncelleIslemTbx.Location = new System.Drawing.Point(11, 293);
             this.guncelleIslemTbx.Name = "guncelleIslemTbx";
             this.guncelleIslemTbx.Size = new System.Drawing.Size(122, 20);
             this.guncelleIslemTbx.TabIndex = 3;
             // 
             // guncelleUcretTbx
             // 
-            this.guncelleUcretTbx.Location = new System.Drawing.Point(178, 151);
+            this.guncelleUcretTbx.Location = new System.Drawing.Point(178, 293);
             this.guncelleUcretTbx.Name = "guncelleUcretTbx";
             this.guncelleUcretTbx.Size = new System.Drawing.Size(122, 20);
             this.guncelleUcretTbx.TabIndex = 4;
@@ -146,7 +146,7 @@ namespace doktorBisiklet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 215);
+            this.ClientSize = new System.Drawing.Size(544, 358);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

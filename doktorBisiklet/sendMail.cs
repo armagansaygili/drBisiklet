@@ -14,12 +14,19 @@ namespace doktorBisiklet
             MailMessage ePosta = new MailMessage();
             ePosta.From = new MailAddress("info.drbisiklet@gmail.com","Dr. Bisiklet");
             ePosta.To.Add(email);
-            ePosta.Subject = icerik ;
+            ePosta.Subject = icerik;
             ePosta.IsBodyHtml = true;
-            ePosta.Body = konu;
+            LinkedResource logo = new LinkedResource("C:\\Program Files (x86)\\Armsaygili\\drBisikletSetup\\drbisiklet.jpg");
+            logo.ContentId = "companylogo";
+            logo.ContentType.Name = "drbisiklet.jpg";
+            AlternateView htmlView = AlternateView.CreateAlternateViewFromString(konu + "<p>Dr.Bisiklet <br>0533 394 03 56 <br><img src=cid:companylogo>", null, "text/html");
+            
+            htmlView.LinkedResources.Add(logo);
+            ePosta.AlternateViews.Add(htmlView);
+
 
             SmtpClient smtp = new SmtpClient();
-            smtp.Credentials = new System.Net.NetworkCredential("info.drbisiklet@gmail.com", "Drbisikletapp");
+            smtp.Credentials = new System.Net.NetworkCredential("info.drbisiklet@gmail.com", "drBisikletappinfo");
             smtp.Port = 587;
             smtp.Host = "smtp.gmail.com";
             smtp.EnableSsl = true;

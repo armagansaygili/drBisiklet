@@ -20,6 +20,7 @@ namespace doktorBisiklet
 
 
         Mysql.SqlConnection sqlconnection = new Mysql.SqlConnection();
+
         public void Datagetir()
         {
             MySqlDataAdapter da = new MySqlDataAdapter("SELECT mus_ad,mus_sad,mus_id,mus_tel from musteri", sqlconnection.baglan());
@@ -64,7 +65,7 @@ namespace doktorBisiklet
         {
             if (musAdTbx.Text != "" && musSadTbx.Text != "")
             {
-                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT mus_ad,mus_sad,mus_id from musteri where  mus_ad like '" + musAdTbx.Text + "%' and mus_sad like '" + musSadTbx.Text + "%'", sqlconnection.baglan());
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT mus_ad,mus_sad,mus_id,mus_tel from musteri where  mus_ad like '" + musAdTbx.Text + "%' and mus_sad like '" + musSadTbx.Text + "%'", sqlconnection.baglan());
                 MySqlDataAdapter da = mySqlDataAdapter;
                 DataTable ds = new DataTable();
                 da.Fill(ds);
@@ -72,7 +73,7 @@ namespace doktorBisiklet
             }
             else if (musAdTbx.Text != "" && musSadTbx.Text == "")
             {
-                MySqlDataAdapter da = new MySqlDataAdapter("SELECT mus_ad,mus_sad,mus_id from musteri where mus_ad like '" + musAdTbx.Text + "%'", sqlconnection.baglan());
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT mus_ad,mus_sad,mus_id,mus_tel from musteri where mus_ad like '" + musAdTbx.Text + "%'", sqlconnection.baglan());
                 DataTable ds = new DataTable();
                 da.Fill(ds);
                 musteriListesiDg.DataSource = ds;
@@ -90,9 +91,10 @@ namespace doktorBisiklet
             }
         }
         string topla ="";
+        
         private void bakimEkleBtn_Click(object sender, EventArgs e)
         {
-            
+
             if (markaTbx.Text != "" && modelTbx.Text != "")
             {
                 if (islemListbox.CheckedItems.Count <= 15)
@@ -119,18 +121,19 @@ namespace doktorBisiklet
 
                     if (ucretTbx.Text != "")
                     {
-                        MySqlCommand mySqlCommand = new MySqlCommand("Insert into bakim_listesi (mus_id,urun_marka,urun_model,islemler,ucret,talma_tarih,urun_durum) values (" + r_id + ",'" + markaTbx.Text + "','" + modelTbx.Text + "','" + topla + "','" + ucretTbx.Text + "','" + tarih + "',0)", sqlconnection.baglan());
+                        MySqlCommand mySqlCommand = new MySqlCommand("Insert into bakim_listesi (mus_id,urun_marka,urun_model,islemler,ucret,talma_tarih,urun_durum,avans) values (" + r_id + ",'" + markaTbx.Text + "','" + modelTbx.Text + "','" + topla + "','" + ucretTbx.Text + "','" + tarih + "',0,'" + avansTbx.Text + "')", sqlconnection.baglan());
                         MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
                     }
                     else
                     {
-                        MySqlCommand mySqlCommand = new MySqlCommand("Insert into bakim_listesi (mus_id,urun_marka,urun_model,islemler,talma_tarih,urun_durum) values (" + r_id + ",'" + markaTbx.Text + "','" + modelTbx.Text + "','" + topla + "','" + tarih + "',0)", sqlconnection.baglan());
+                        MySqlCommand mySqlCommand = new MySqlCommand("Insert into bakim_listesi (mus_id,urun_marka,urun_model,islemler,talma_tarih,urun_durum,avans) values (" + r_id + ",'" + markaTbx.Text + "','" + modelTbx.Text + "','" + topla + "','" + tarih + "',0,'" + avansTbx.Text + "')", sqlconnection.baglan());
                         MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
                     }
 
-                    markaTbx.Text = "";
-                    modelTbx.Text = "";
-                    ucretTbx.Text = "";
+                    
+
+
+
 
 
                     printPreviewDialog.Document = printDocument;
@@ -182,7 +185,7 @@ namespace doktorBisiklet
                     }
                     if (i == 1)
                     {
-                        kaydir = 510 ;
+                        kaydir = 570 ;
                     }
 
                     //baslik tablo cizimleri
@@ -190,7 +193,7 @@ namespace doktorBisiklet
                     e.Graphics.DrawLine(pen, 30, 15 + kaydir, 30, 145 + kaydir);
                     e.Graphics.DrawLine(pen, 797, 15 + kaydir, 797, 145 + kaydir);
                     e.Graphics.DrawLine(pen, 30, 145 + kaydir, 797, 145 + kaydir);
-                    System.Drawing.Image img = System.Drawing.Image.FromFile("C:\\Users\\armsa\\Desktop\\Taner\\doktorBisiklet\\doktorBisiklet\\images\\drbisiklet.jpg"); //baslik logosu
+                    System.Drawing.Image img = System.Drawing.Image.FromFile("C:\\Program Files (x86)\\Armsaygili\\drBisikletSetup\\drbisiklet.jpg"); //baslik logosu
                     e.Graphics.DrawImage(img, 45, 30 + kaydir, img.Width, img.Height);
 
                     //baslik icerigi
@@ -199,9 +202,9 @@ namespace doktorBisiklet
                     e.Graphics.DrawString("Tel", font, firca, 145, 75 + kaydir);
                     e.Graphics.DrawString(": 0224 245 80 89", font, firca, 195, 75 + kaydir);
                     e.Graphics.DrawString("Gsm", font, firca, 145, 90 + kaydir);
-                    e.Graphics.DrawString(": 553 395 03 56", font, firca, 195, 90 + kaydir);
+                    e.Graphics.DrawString(": 553 394 03 56", font, firca, 195, 90 + kaydir);
                     e.Graphics.DrawString("e-mail", font, firca, 145, 105 + kaydir);
-                    e.Graphics.DrawString(": dr.ramazan16@hotmail.com", font, firca, 195, 105 + kaydir);
+                    e.Graphics.DrawString(": drbisiklet@gmail.com", font, firca, 195, 105 + kaydir);
 
                     //bilgi tablosu cizimi
                     e.Graphics.DrawLine(pen, 30, 160 + kaydir, 797, 160 + kaydir);
@@ -210,6 +213,7 @@ namespace doktorBisiklet
                     e.Graphics.DrawLine(pen, 30, 160 + kaydir, 30, 325 + kaydir);
                     e.Graphics.DrawLine(pen, 797, 160 + kaydir, 797, 325 + kaydir);
                     e.Graphics.DrawLine(pen, 410, 240 + kaydir, 797, 240 + kaydir);
+
 
                     //bilgi tablo icerigi
                     e.Graphics.DrawString("Adı Soyadı", fontBaslik, firca, 80, 175 + kaydir);
@@ -224,24 +228,22 @@ namespace doktorBisiklet
                   
                     if (ucretTbx.Text != "")
                     {
-                        e.Graphics.DrawString("Tutarı", fontBaslik, firca, 80, 250 + kaydir);
-                        e.Graphics.DrawString($": {ucretTbx.Text}₺", font, firca, 200, 250 + kaydir);
+                        e.Graphics.DrawString("Tutarı", fontBaslik, firca, 450, 255 + kaydir);
+                        e.Graphics.DrawString($"{ucretTbx.Text}₺", font, firca, 460, 275 + kaydir);
                     }
                     else
                     {
-                        e.Graphics.DrawString("Tutarı", fontBaslik, firca, 80, 250 + kaydir);
-                        e.Graphics.DrawString(":", font, firca, 200, 250 + kaydir);
+                        e.Graphics.DrawString("Tutarı", fontBaslik, firca, 450, 255 + kaydir);
                     }
 
                     if (avansTbx.Text != "")
                     {
-                        e.Graphics.DrawString("A. Avans", fontBaslik, firca, 80, 275 + kaydir);
-                        e.Graphics.DrawString($": {avansTbx.Text}₺", font, firca, 200, 275 + kaydir);
+                        e.Graphics.DrawString("A. Avans", fontBaslik, firca, 670, 255 + kaydir);
+                        e.Graphics.DrawString($"{avansTbx.Text}₺", font, firca, 690, 275 + kaydir);
                     }
                     else
                     {
-                        e.Graphics.DrawString("A. Avans", fontBaslik, firca, 80, 275 + kaydir);
-                        e.Graphics.DrawString($":", font, firca, 200, 275 + kaydir);
+                        e.Graphics.DrawString("A. Avans", fontBaslik, firca, 670, 255 + kaydir);
                     }
 
                     e.Graphics.DrawString("Geliş Tarihi", fontBaslik, firca, 515, 175 + kaydir);
@@ -252,11 +254,11 @@ namespace doktorBisiklet
 
 
 
-                    e.Graphics.DrawString("Teslim Alan", fontBaslik, firca, 450, 255 + kaydir);
-                    e.Graphics.DrawString("İmza", font, fircaImza, 475, 275 + kaydir);
+                    //e.Graphics.DrawString("Teslim Alan", fontBaslik, firca, 450, 255 + kaydir);
+                    //e.Graphics.DrawString("İmza", font, fircaImza, 475, 275 + kaydir);
 
-                    e.Graphics.DrawString("Teslim Eden", fontBaslik, firca, 670, 255 + kaydir);
-                    e.Graphics.DrawString("İmza", font, fircaImza, 695, 275 + kaydir);
+                    //e.Graphics.DrawString("Teslim Eden", fontBaslik, firca, 670, 255 + kaydir);
+                    //e.Graphics.DrawString("İmza", font, fircaImza, 695, 275 + kaydir);
 
                     ///////////////////ilk kisim son///////////////////
 
@@ -266,9 +268,13 @@ namespace doktorBisiklet
                 e.Graphics.DrawString("2- Kaybolduğunda sadece ismi yazılı kişiye hüviyet göstermek suretiyle teslim alındığına dair imza", font, firca, 45, 365);
                 e.Graphics.DrawString("karşılığı teslim edilir.", font, firca, 65, 390);
                 e.Graphics.DrawString("3- 45 gün içerisinde alınmayan maldan mesuliyet kabul olunmaz.", font, firca, 45, 415);
-                e.Graphics.DrawString("4- Mamülün garantisi decam ediyorsa garanti belgesi (eksiksiz doldurulmuş şekilde) mutlaka ", font, firca, 45, 440);
+                e.Graphics.DrawString("4- Mamülün garantisi devam ediyorsa garanti belgesi (eksiksiz doldurulmuş şekilde) mutlaka ", font, firca, 45, 440);
                 e.Graphics.DrawString("edilmesi gerekir.", font, firca, 65, 465);
                 e.Graphics.DrawString("5- Mamülünü teslim eden yukarıda yazılı bulunan kuralları kabul etmiş sayılır.", font, firca, 45, 490);
+                e.Graphics.DrawString("6- Bakım işlemi tamamlandığında E-posta ile bilgilendirme yapılacaktır. Sistemimize kayıt", font, firca, 45, 515);
+                e.Graphics.DrawString("ettirdiğiniz E-posta adresinizi kontrol etmeyi unutmayınız.", font, firca, 65, 540);
+
+
 
 
 
