@@ -26,7 +26,7 @@ namespace doktorBisiklet
 
 
             SmtpClient smtp = new SmtpClient();
-            smtp.Credentials = new System.Net.NetworkCredential("info.drbisiklet@gmail.com", "drBisikletappinfo");
+            smtp.Credentials = new System.Net.NetworkCredential("YOUR_MAIL", "YOUR_PASS");
             smtp.Port = 587;
             smtp.Host = "smtp.gmail.com";
             smtp.EnableSsl = true;
